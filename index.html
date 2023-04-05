@@ -534,7 +534,10 @@
                         window.location.href = commandData.url;
                     }
 
-                }
+                } else if (commandData && commandData.command === 'filterPortfolio') {
+					console.log('Filter is' + commandData.value;
+					filter(commandData.value);
+				}
             },
             onConnectionStatus: function (status) {
                 if (status === 'authorized') {
@@ -549,6 +552,10 @@
             },
 		rootEl: document.getElementById("alan-btn"),
 	  });
+	  
+	  function filter(value) {
+		$('.filtr-container').filterizr('filter', value);
+	  }
 	</script>
 	<!-- End of Alan button block -->
 	
