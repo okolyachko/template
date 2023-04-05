@@ -567,16 +567,20 @@
             },
 		rootEl: document.getElementById("alan-btn"),
 	  });
-	  
-	  $.jQueryFunction = function (value) {
-            $('.filtr-container').filterizr('filter', value);
-         };
-	  
-	  function filter(value) {
-		jQueryFunction(value);
-	  }
 	</script>
 	<!-- End of Alan button block -->
+	<!-- Filtering-->
+	  var filterFunction;
+	  $(function(){
+		filterFunction = function(value){
+			$('.filtr-container').filterizr('filter', value);
+		}
+	  })
+	  function filter(value)
+	  {
+		filterFunction(commandData.value);
+	  }
+	 <!-- End of filtering -->
 
 	
 	
