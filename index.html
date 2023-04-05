@@ -535,6 +535,7 @@
                     }
 
                 } else if (commandData && commandData.command === 'filterPortfolio') {
+				    console.log('Got the filter command');
 					console.log(commandData.command, commandData.value);
 					filter(commandData.value);
 				} 
@@ -542,8 +543,12 @@
 		rootEl: document.getElementById("alan-btn"),
 	  });
 	  
+	  $.jQueryFunction = function (value) {
+            $('.filtr-container').filterizr('filter', value);
+         };
+	  
 	  function filter(value) {
-		$('.filtr-container').filterizr('filter', value);
+		jQueryFunction(value);
 	  }
 	</script>
 	<!-- End of Alan button block -->
