@@ -535,21 +535,10 @@
                     }
 
                 } else if (commandData && commandData.command === 'filterPortfolio') {
-					console.log('Filter is' + commandData.value);
+					console.log(commandData.command, commandData.value);
 					filter(commandData.value);
-				}
-            },
-            onConnectionStatus: function (status) {
-                if (status === 'authorized') {
-                    window.alanBtnInstance.setVisualState({ page: window.location.pathname, url: window.location.href });
-                    if(isLocalStorageAvailable()){
-                        if(!localStorage.getItem('alan-btn-session-'+ getProjectId())) {
-                            localStorage.setItem('alan-btn-session-'+ getProjectId(), 1)
-                            window.alanBtnInstance.callProjectApi("sendGreetingMessage");
-                        }
-                    }
-                }
-            },
+				} 
+            }
 		rootEl: document.getElementById("alan-btn"),
 	  });
 	  
