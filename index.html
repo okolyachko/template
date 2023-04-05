@@ -542,6 +542,19 @@
     <!-- Custom js -->
 	<script type="text/javascript" src="assets/js/custom.js"></script>
 	
+	<!-- Filtering-->
+	  var filterFunction;
+	  $(function(){
+		filterFunction = function(value){
+			$('.filtr-container').filterizr('filter', value);
+		}
+	  })
+	  function filter(value)
+	  {
+		filterFunction(value);
+	  }
+	 <!-- End of filtering -->
+	
 	<!-- Alan button block-->
     <div class="alan-btn"></div>
 	
@@ -569,18 +582,6 @@
 	  });
 	</script>
 	<!-- End of Alan button block -->
-	<!-- Filtering-->
-	  var filterFunction;
-	  $(function(){
-		filterFunction = function(value){
-			$('.filtr-container').filterizr('filter', value);
-		}
-	  })
-	  function filter(value)
-	  {
-		filterFunction(commandData.value);
-	  }
-	 <!-- End of filtering -->
 
 	
 	
