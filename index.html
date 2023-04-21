@@ -471,26 +471,7 @@
 
 											</div>
 										</div>
-									</div>	
-
-									<div class="col-md-12">
-										<div class="mu-contact-bottom">
-										<div id="form-messages"></div>
-											<form id="ajax-contact" method="post" action="mailer.php" class="mu-contact-form">
-												<div class="form-group">                
-													<input type="text" class="form-control" placeholder="Name" id="name" name="name" required>
-												</div>
-												<div class="form-group">                
-													<input type="email" class="form-control" placeholder="Enter Email" id="email" name="email" required>
-												</div>              
-												<div class="form-group">
-													<textarea class="form-control" placeholder="Message" id="message" name="message" required></textarea>
-												</div>
-												<button type="submit" class="mu-send-msg-btn"><span>SUBMIT</span></button>
-								            </form>
-										</div>
-									</div>	
-
+									</div>
 								</div>
 							</div>
 							<!-- End Contact Content -->
@@ -537,8 +518,6 @@
     <script src="assets/js/libs/jquery.appear.js"></script>
 	<!-- Progress Bar -->
     <script type="text/javascript" src="assets/js/libs/jquery.lineProgressbar.js"></script>
-    
-	
     <!-- Custom js -->
 	<script type="text/javascript" src="assets/js/custom.js"></script>
 	
@@ -556,37 +535,27 @@
 	  }
 	 </script>
 	 <!-- End of filtering -->
-	
-	<!-- Alan button block-->
-    
-	
+	 
+	<!-- Alan button block-->	
 	<script type="text/javascript"
 	 src="https://studio.alan.app/web/lib/alan_lib.min.js"></script>
 	<script>
 	  var alanBtnInstance = alanBtn({
-		key: "b0b73f3c20062abe4d0bf347580da6fd2e956eca572e1d8b807a3e2338fdd0dc/stage",
+        key: "779f84ab635e2f557d43485dbc3cb44a2e956eca572e1d8b807a3e2338fdd0dc/stage",
 		onCommand: function (commandData) {
-
-                if (commandData && commandData.command === 'openURL') {
-                    if (commandData.target === '_blank'){
-                        window.open(commandData.url,'_newtab' + Math.floor(Math.random()*999999));
-                    } else {
-                        window.location.href = commandData.url;
-                    }
-
-                } else if (commandData && commandData.command === 'filterPortfolio') {
-				    console.log('Got the filter command');
-					console.log(commandData.command, commandData.value);
-					filter(commandData.value);
-				} 
-            },
+          if (commandData && commandData.command === 'openURL') {
+            if (commandData.target === '_blank'){
+              window.open(commandData.url,'_newtab' + Math.floor(Math.random()*999999));
+            } else {
+              window.location.href = commandData.url;
+            }
+		  } else if (commandData && commandData.command === 'filterPortfolio') {
+            filter(commandData.value);
+          } 
+        },
 		rootEl: document.getElementById("alan-btn"),
 	  });
 	</script>
-	<!-- End of Alan button block -->
-
-	
-	
-    
+	<!-- End of Alan button block -->   
   </body>
 </html>
